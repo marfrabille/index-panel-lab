@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 资料索引与信息整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f4f6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e2a3a;
+            line-height: 1.7;
+            padding: 2.4rem 1.2rem;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 主标题区 */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0c1a2b;
+        }
+
+        .hero .sub {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+            color: #4a5a6e;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 卡片通用设计：浅灰背景 + 细边框 + 柔和阴影 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e3e7ec;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #142433;
+            border-left: 4px solid #9aaec2;
+            padding-left: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 1.6rem;
+            margin-bottom: 0.4rem;
+            color: #1e2f44;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            color: #2e3f52;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .feature-item {
+            background: #f7f9fb;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #eef2f6;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 550;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+            color: #0d1f33;
+        }
+
+        .feature-item span {
+            font-size: 0.95rem;
+            color: #3b4e61;
+        }
+
+        .inline-link {
+            color: #1f5480;
+            text-decoration: none;
+            border-bottom: 1px solid #b9ccde;
+            transition: border-color 0.15s, color 0.15s;
+            font-weight: 450;
+        }
+
+        .inline-link:hover {
+            color: #0a2e4a;
+            border-bottom-color: #0a2e4a;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1.2rem 0 0.2rem;
+        }
+
+        .tag {
+            background: #e8edf3;
+            color: #1e2f42;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            border: 1px solid #d5dde7;
+            letter-spacing: 0.02em;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #132638;
+        }
+
+        .faq-item .a {
+            margin-top: 0.15rem;
+            padding-left: 1.2rem;
+            color: #3a4d62;
+            border-left: 2px solid #d5dee8;
+        }
+
+        .note-tip {
+            background: #f6f9fd;
+            border-left: 4px solid #9bb3cd;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            margin: 1.2rem 0 0.2rem;
+            font-size: 0.95rem;
+            color: #1f3750;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dfe5ed;
+            margin: 2rem 0 1rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #65778b;
+            padding: 1.8rem 0 0.8rem;
+            border-top: 1px solid #dfe5ed;
+            margin-top: 1rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .card h2 {
+                font-size: 1.25rem;
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- hero 简述 -->
+    <div class="hero">
+        <h1>华体会 · 资料整理与信息索引</h1>
+        <div class="sub">
+            一份围绕文档、归档与查阅习惯展开的产品说明。内容源于长期对信息结构的观察，不渲染，不拔高。
+        </div>
+    </div>
+
+    <!-- 摘要卡片 -->
+    <div class="card">
+        <h2>摘要 · 为什么会有这个索引</h2>
+        <p>
+            在日常的信息收集中，很多人会面对零散的页面、截图、链接碎片。我们注意到
+            <a href="https://index-panel-hth.com" class="inline-link">华体会</a>
+            提供了一种相对简洁的整合方式——把关键的分项条目与数据面板集中在一个视图里。它不是一个堆砌功能的平台，而更像一个信息面板，用于快速检索和定位自己关注的内容。
+        </p>
+        <p>
+            从资料整理的角度看，它减少了在多级菜单中翻找的消耗。你不需要记住每个分类的路径，只需要通过索引区的条目就能大致了解结构。这个思路对经常需要回溯信息的人来说，有可参考的价值。
+        </p>
+    </div>
+
+    <!-- 亮点 + 特点 (卡片内分两列) -->
+    <div class="card">
+        <h2>几个值得注意的亮点</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>分类面板</strong>
+                <span>主要模块以卡片形式陈列，视觉层级清晰，适合快速浏览和标记。</span>
+            </div>
+            <div class="feature-item">
+                <strong>索引效率</strong>
+                <span>减少深层点击，将常用条目保持在两个页面以内，降低信息回溯的摩擦。</span>
+            </div>
+            <div class="feature-item">
+                <strong>标签式筛选</strong>
+                <span>通过标签区分内容属性，避免在大量条目中迷失，适合不定期整理的场景。</span>
+            </div>
+            <div class="feature-item">
+                <strong>克制的信息密度</strong>
+                <span>没有采用信息轰炸式的布局，而是保留了一定留白，阅读负担较轻。</span>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem;">
+            以上是基于长期使用同类工具后，对 <a href="https://index-panel-hth.com" class="inline-link">华体会</a> 索引面板的个人体会。不同用户的整理习惯可能差异很大，建议先小范围试用，看是否匹配自己的信息流。
+        </p>
+    </div>
+
+    <!-- 场景与建议 -->
+    <div class="card">
+        <h2>使用建议 · 从实际场景出发</h2>
+        <p>
+            如果你经常需要管理多个标签页、在周报或笔记中引用不同来源的条目，或者希望一个页面就能概览某类内容的整体分布，那么这类面板式索引会是一个不错的辅助工具。
+        </p>
+        <div class="note-tip">
+            <strong>一个小提醒：</strong> 索引工具的价值取决于你如何填充和组织内容。它本身不产生判断，只提供结构。建议先梳理自己的分类习惯，再对照面板调整，而不是反过来被面板牵着走。
+        </div>
+        <p>
+            另外，可以定期清理不常用的条目。即使索引做得再清晰，冗余信息也会慢慢降低效率。保持面板的轻量和聚焦，是长期维持使用体验的关键。
+        </p>
+        <div class="tag-list">
+            <span class="tag">信息整理</span>
+            <span class="tag">索引面板</span>
+            <span class="tag">标签分类</span>
+            <span class="tag">轻量归档</span>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 (非完整FAQ, 只选两个典型) -->
+    <div class="card">
+        <h2>FAQ 摘要 · 几个常见疑问</h2>
+        <div class="faq-item">
+            <div class="q">Q：这个面板适合存放什么样的内容？</div>
+            <div class="a">A：比较适合条目型、链接型、短描述类的资料，比如书签集合、项目要点、常用参考表。长文或深度分析不太适合直接放进来，更适合作为外部链接索引。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q：是否需要注册或登录才能使用？</div>
+            <div class="a">A：<a href="https://index-panel-hth.com" class="inline-link">华体会</a> 本身提供面板功能，但具体是否需要账户取决于你使用的环境。建议在访问前了解清楚其基础权限要求，再做进一步整理。</div>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.92rem; color: #4a6075;">
+            更多细节可以在使用过程中逐步摸索。信息工具应该在适应你，而不是反过来。
+        </p>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <div class="card" style="margin-bottom: 1rem;">
+        <h2>访问说明 · 保持合理预期</h2>
+        <p>
+            如果你对上述索引思路感兴趣，可以通过 <a href="https://index-panel-hth.com" class="inline-link">华体会</a> 直接访问其面板页面。页面内容以信息陈列为主，不涉及任何自动跳转或强制交互。
+        </p>
+        <p>
+            需要说明的是，任何索引工具都无法替代个人的判断与筛选。它提供的是路径，而不是答案。在参考或使用前，建议先花几分钟浏览整体的栏目结构，确认它是否符合你当下的整理需求。
+        </p>
+        <div class="note-tip">
+            本页面仅从资料整理与信息索引的角度进行介绍，不构成对任何服务或功能的承诺。请基于自身判断使用。
+        </div>
+    </div>
+
+    <!-- 底部分隔 -->
+    <hr>
+    <div class="footer-note">
+        基于信息整理习惯的产品说明 · 不包含夸大表述或诱导性语言
+    </div>
+</div>
+</body>
+</html>
